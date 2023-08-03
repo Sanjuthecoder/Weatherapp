@@ -51,10 +51,8 @@ app.get("/weather", async (req, res) => {
   }
 });
 
-app.get('*' , function( req , res){
-  res.sendFile(
-    path.join(__dirname , "../build" , "index.html"),
-  )
+app.get('/' , (req , res) => {
+  res.status(200).send('this is weather App')
 })
 
 const PORT = process.env.PORT || 1000;
